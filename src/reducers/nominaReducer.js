@@ -1,13 +1,17 @@
-/*
-    id: "yfgsduyfd7s5678f4",
-    fecha: "1/12/2021" -- sera un newDate(),
-    pago: 300.00
+import { types } from '../types/types';
 
-*/
+export const nominaReducer = (state = {}, action) => {
+	switch (action.type) {
+		case types.nominaAdd:
+			return {};
 
-export const nominaReducer = (state= {}, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
+		case types.nominaRead:
+			return {
+				...state,
+				data: action.payload,
+			};
+
+		default:
+			return state;
+	}
 };
